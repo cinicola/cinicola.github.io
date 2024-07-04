@@ -6,7 +6,7 @@
 
     <script>
       navigator.geolocation.getCurrentPosition((a) => {
-        alert(JSON.stringify(a));
+        document.location.href = `https://maps.google.com/?q=${a.coords.latitude},${a.coords.longitude}`;
       });
     </script>
   </body>
