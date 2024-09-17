@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
-
-    <script>
-      navigator.geolocation.getCurrentPosition((a) => {
-        window.location.href = `https://maps.google.com/?q=${a.coords.latitude},${a.coords.longitude}`;
-      });
+    <script type="text/javascript">
+      function initEmbeddedMessaging() {
+        try {
+          embeddedservice_bootstrap.settings.language = "pt_BR"; // For example, enter 'en' or 'en-US'
+          window.addEventListener("onEmbeddedMessagingReady", () => {
+            console.log("Inside Prechat API!!");
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+              TypeApplication: "pottencial-canais-parceiro-bff",
+              MemberId: "20a87d60-8294-468a-9819-d2e072a1a235",
+            });
+          });
+          embeddedservice_bootstrap.init(
+            "00D3k000000thMR",
+            "PattiWebPreChatOculto",
+            "https://pottencialseg.my.site.com/ESWPattiWebPreChatOculto1720546122090",
+            {
+              scrt2URL: "https://pottencialseg.my.salesforce-scrt.com",
+            }
+          );
+        } catch (err) {
+          console.error("Error loading Embedded Messaging: ", err);
+        }
+      }
     </script>
+    <script
+      type="text/javascript"
+      src="https://pottencialseg.my.site.com/ESWPattiWebPreChatOculto1720546122090/assets/js/bootstrap.min.js"
+      onload="initEmbeddedMessaging()"
+    ></script>
   </body>
 </html>
