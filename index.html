@@ -1,29 +1,13 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Chatbot EC</h1>
-    <script type="text/javascript">
-      function initEmbeddedMessaging() {
-        try {
-          embeddedservice_bootstrap.settings.language = "pt_BR"; // For example, enter 'en' or 'en-US'
+    <h1>Hello World</h1>
+    <p>I'm hosted with GitHub Pages.</p>
 
-          embeddedservice_bootstrap.init(
-            "00DHp000001tDWR",
-            "ChatBotEC",
-            "https://grupovr.my.site.com/ESWChatBotEC1726362319030",
-            {
-              scrt2URL: "https://grupovr.my.salesforce-scrt.com",
-            }
-          );
-        } catch (err) {
-          console.error("Error loading Embedded Messaging: ", err);
-        }
-      }
+    <script>
+      navigator.geolocation.getCurrentPosition((a) => {
+        window.location.href = `https://maps.google.com/?q=${a.coords.latitude},${a.coords.longitude}`;
+      });
     </script>
-    <script
-      type="text/javascript"
-      src="https://grupovr.my.site.com/ESWChatBotEC1726362319030/assets/js/bootstrap.min.js"
-      onload="initEmbeddedMessaging()"
-    ></script>
   </body>
 </html>
