@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Hello World</h1>
+    <p>I'm hosted with GitHub Pages.</p>
+
+    <script>
+      navigator.geolocation.getCurrentPosition((a) => {
+        window.location.href = `https://maps.google.com/?q=${a.coords.latitude},${a.coords.longitude}`;
+      });
+    </script>
+  </body>
+</html>
