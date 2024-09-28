@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    html {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: 20px;
+    }
+    a {
+      background-color: #4CAF50; color: white; padding: 10px; text-decoration: none;
+      margin: 4px;
+      border-radius: 8px;
+      display: block;
+      width: 150px;
+      text-align: center;
+    }
+    a:hover {
+      filter: saturate(2);
+    }
+  </style>
+  <body>
+    <h1>Salesforce Bookmarklets</h1>
+    <p>Click and drag to your bookmarks bar</p>
+
+    <table>
+      <tr>
+        <td><a href="javascript:void(window.opens(document.location.href.substring(0,document.location.href.lastIndexOf('force.com') + 'force.com'.length) + '/_ui/common/apex/debug/ApexCSIPage', 'consoleSF'))">Console</a></td>
+        <td>Opens developer console</td>
+        </tr>
+        <tr>
+        <td><a href="javascript:if (document.location.href.indexOf('lightning.force.com')>-1){document.location.href=document.location.href.substring(0,document.location.href.lastIndexOf('force.com') + 'force.com'.length) + '/ltng/switcher?destination=classic%27; }else{sfdcPage.handleSwitchToLightningClick(%27LightningExperiencePreferred%27,true,%27/ltng/switcher?destination=lex-campaign%27); }">Switch</a></td>
+        <td>Switches between Lightning and Classic</td>
+        </tr>
+        <tr>
+        <td><a href="javascript: document.location.href = 'https://' +document.location.host + '/005?isUserEntityOverride=1&retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DUsers&setupid=ManageUsers&rowsperpage=3500'">All Users</a></td>
+        <td>Opens the users page with max records</td>
+        </tr>
+        <tr>
+        <td><a href="javascript: document.location.href = 'https://' +document.location.host + '/lightning/setup/SetupOneHome/home'">Setup</a></td>
+        <td>Opens Setup</td>
+        </tr>
+        <tr>
+        <td><a href="javascript: document.location.href = 'https://' +document.location.host + '/lightning/setup/DeployStatus/home'">Stat</a></td>
+        <td>Deployment Status</td>
+        </tr>
+        <tr>
+        <td><a href="javascript: var pkgId = prompt('Digite o Id do pacote'); if (pkgId) {document.location.href = 'https://' +document.location.host + '/packaging/installPackage.apexp?p0=' + pkgId;}">AddPkg</a></td>
+        <td>Opens prompt to install a Package with Id</td>
+        </tr>
+        <tr>
+        <td><a href="javascript: document.location.href = 'https://' +document.location.host + '/lightning/o/bdrs__WorkControl__c/list'">WC</a></td>
+        <td>Opens Work Control page</td>
+        </tr>
+        <tr>
+        <td><a href="javascript: document.location.href = 'https://' +document.location.host + '/lightning/n/bdrs__OrgLimitsDashboard'">Limits</a></td>
+        <td>Opens Org Dashboard Limits</td>
+        </tr>
+    </table>
+  </body>
+</html>
