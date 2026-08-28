@@ -14,9 +14,9 @@
 <!--  NOTA: Adicione o elemento <FORM> a seguir à sua página.                 -->
 <!--  ----------------------------------------------------------------------  -->
 
-<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dbe00000153UX" method="POST">
+<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dbe00000153UX" method="POST" onsubmit="return validateRecaptcha();">
 
-<input type=hidden name='captcha_settings' value='{"keyname":"banana2","fallback":"true","orgId":"00Dbe00000153UX","ts":""}'>
+<input type=hidden name='captcha_settings' value='{"keyname":"banana3","fallback":"true","orgId":"00Dbe00000153UX","ts":""}'>
 <input type=hidden name="oid" value="00Dbe00000153UX">
 <input type=hidden name="retURL" value="http://">
 
@@ -28,7 +28,7 @@
 <!--  value="henrique.lima@platformbuilders.io">                              -->
 <!--  ----------------------------------------------------------------------  -->
 
-<label for="first_name">zPrimeiro Nome</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+<label for="first_name">Primeiro Nome</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
 
 <label for="last_name">Sobrenome</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
 
@@ -36,9 +36,30 @@
 
 <label for="company">Empresa</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
 
+<label for="city">Cidade</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+
+<label for="state">Estado/província</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+
 <input type="hidden"  id="lead_source" name="lead_source" value="Web" /><br>
 
-<div class="g-recaptcha" data-sitekey="6LeZtpstAAAAAKbFQ4ZwkkrfKqjus1ZwHSJRoXKx"></div><br>
+<div class="g-recaptcha" data-sitekey="6LdqH5wtAAAAANf3aLExf01UgDFYsIj3rUfuCUDv"></div><br>
 <input type="submit" name="submit">
+
+
+
+<script>
+  function validateRecaptcha() {
+    // Check if reCAPTCHA has been completed
+    var response = grecaptcha.getResponse();
+
+    if (response.length === 0) {
+      alert("Please complete the reCAPTCHA challenge before submitting.");
+      return false; // Prevents form submission
+    }
+
+    return true; // Allows form submission
+  }
+</script>
+
 
 </form>
